@@ -1,0 +1,145 @@
+/* Global Styles */
+body {
+  font-family: "Arial", sans-serif;
+  background-color: #f4f7fc;
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
+/* Container Styles */
+.container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 30px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+/* Header and Description */
+h1 {
+  font-size: 28px;
+  color: #5d5d5d;
+  margin-bottom: 20px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+p {
+  font-size: 18px;
+  color: #666;
+  margin-bottom: 30px;
+  line-height: 1.5;
+}
+
+/* Select and Button Styles */
+label {
+  font-size: 18px;
+  color: #333;
+  margin-right: 10px;
+  font-weight: 600;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+/* Dropdown and Button */
+select,
+button {
+  padding: 12px 20px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 2px solid #ccc;
+  background-color: #f7f7f7;
+  transition: 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+select:focus,
+button:focus {
+  outline: none;
+  border-color: #007bff;
+}
+
+select:hover,
+button:hover {
+  background-color: #007bff;
+  color: white;
+  border-color: #0056b3;
+}
+
+/* Styling for Table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 40px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+th,
+td {
+  padding: 14px 20px;
+  text-align: left;
+  font-size: 16px;
+}
+
+th {
+  background-color: #007bff;
+  color: white;
+  text-transform: uppercase;
+}
+
+td {
+  background-color: #fafafa;
+  color: #333;
+}
+
+td:hover {
+  background-color: #f1f1f1;
+  transition: 0.3s;
+}
+
+#timeDisplay {
+  font-size: 18px;
+  font-weight: bold;
+  color: #28a745;
+  margin-top: 20px;
+  letter-spacing: 1px;
+}
+
+/* Animated Button */
+button {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+button:hover {
+  background-color: #218838;
+  transform: translateY(-2px);
+}
+
+/* Media Query for Responsiveness */
+@media (max-width: 768px) {
+  .container {
+    padding: 20px;
+    max-width: 100%;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+
+  p {
+    font-size: 16px;
+  }
+
+  select,
+  button {
+    font-size: 14px;
+  }
+}

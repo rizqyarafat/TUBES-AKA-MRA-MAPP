@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sort Produk Minimarket</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Sort Produk Minimarket</h1>
+      <p>
+        Pilih metode sorting dan kategori produk untuk memisahkan dan
+        mengurutkan daftar produk:
+      </p>
+
+      <!-- Pilihan Metode Sorting -->
+      <div class="sorting-method">
+        <label for="sortingMethod">Metode Sorting:</label>
+        <select id="sortingMethod" onchange="clearTimeDisplay()">
+          <option value="iterative">Sort Iteratif</option>
+          <option value="recursive">Sort Rekursif</option>
+        </select>
+        <button onclick="sortProducts()">Sort</button>
+      </div>
+
+      <br /><br />
+
+      <!-- Pilihan Kategori -->
+      <div class="category-selection">
+        <label for="category">Kategori:</label>
+        <select id="category" onchange="filterProducts()">
+          <option value="Snack">Snack</option>
+          <option value="Alat Mandi">Alat Mandi</option>
+        </select>
+      </div>
+
+      <!-- Execution Time Display (Above Table) -->
+      <div id="timeDisplay"></div>
+
+      <!-- Tabel Produk -->
+      <table id="productTable">
+        <thead>
+          <tr>
+            <th>Nama Produk</th>
+            <th>Kategori</th>
+            <th>Nomor Rak</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Data akan ditampilkan di sini -->
+        </tbody>
+      </table>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
