@@ -25,6 +25,7 @@ const products = [
   { name: "Trail Mix", category: "Snack", rack: 23 },
   { name: "Granola Bars", category: "Snack", rack: 24 },
   { name: "Apple Chips", category: "Snack", rack: 25 },
+  /*
   { name: "Cinnamon Pretzels", category: "Snack", rack: 26 },
   { name: "Spicy Peanuts", category: "Snack", rack: 27 },
   { name: "Cashew Nuts", category: "Snack", rack: 28 },
@@ -50,6 +51,7 @@ const products = [
   { name: "Coconut Macaroons", category: "Snack", rack: 48 },
   { name: "Pistachios", category: "Snack", rack: 49 },
   { name: "Honey Roasted Cashews", category: "Snack", rack: 50 },
+  /*
   { name: "Choco Brownie Bites", category: "Snack", rack: 51 },
   { name: "Cinnamon Crisps", category: "Snack", rack: 52 },
   { name: "Cheese Balls", category: "Snack", rack: 53 },
@@ -75,6 +77,7 @@ const products = [
   { name: "Sweet Plantain Chips", category: "Snack", rack: 73 },
   { name: "Peanut Caramel Clusters", category: "Snack", rack: 74 },
   { name: "Blueberry Wafers", category: "Snack", rack: 75 },
+  
   { name: "Trail Nut Mix", category: "Snack", rack: 76 },
   { name: "Cheddar Popcorn", category: "Snack", rack: 77 },
   { name: "Maple Cashews", category: "Snack", rack: 78 },
@@ -692,6 +695,7 @@ const products = [
   { name: "Chocolate Chip Snack Bites", category: "Snack", rack: 498 },
   { name: "Honey Roasted Cashew Crunch Mix", category: "Snack", rack: 499 },
   { name: "Fruit and Nut Protein Crunch Bars", category: "Snack", rack: 500 },
+  */
   // Alat Mandi
   { name: "Shampoo Herbal", category: "Alat Mandi", rack: 1 },
   { name: "Body Wash Citrus", category: "Alat Mandi", rack: 2 },
@@ -718,6 +722,7 @@ const products = [
   { name: "Shaving Razor", category: "Alat Mandi", rack: 23 },
   { name: "Facial Tissues", category: "Alat Mandi", rack: 24 },
   { name: "Nail Clippers", category: "Alat Mandi", rack: 25 },
+  /*
   { name: "Bathe Mitt", category: "Alat Mandi", rack: 26 },
   { name: "Eye Mask", category: "Alat Mandi", rack: 27 },
   { name: "Toothbrush Holder", category: "Alat Mandi", rack: 28 },
@@ -743,6 +748,7 @@ const products = [
   { name: "Electric Toothbrush", category: "Alat Mandi", rack: 48 },
   { name: "Face Mask Sheet", category: "Alat Mandi", rack: 49 },
   { name: "Body Powder", category: "Alat Mandi", rack: 50 },
+  /*
   { name: "Bubble Soap", category: "Alat Mandi", rack: 51 },
   { name: "Shampoo Lavender", category: "Alat Mandi", rack: 52 },
   { name: "Bath Crystals", category: "Alat Mandi", rack: 53 },
@@ -768,6 +774,7 @@ const products = [
   { name: "Face Serum", category: "Alat Mandi", rack: 73 },
   { name: "Nail File", category: "Alat Mandi", rack: 74 },
   { name: "Bath Caddy", category: "Alat Mandi", rack: 75 },
+  /*
   { name: "Bath Fizz", category: "Alat Mandi", rack: 76 },
   { name: "Hair Curl Cream", category: "Alat Mandi", rack: 77 },
   { name: "Body Mist", category: "Alat Mandi", rack: 78 },
@@ -1696,7 +1703,7 @@ const products = [
     name: "Hair Repair Serum with Coconut Water",
     category: "Alat Mandi",
     rack: 500,
-  },
+  }, */
 ];
 // Menyaring produk berdasarkan kategori yang dipilih
 function filterProducts() {
@@ -1721,7 +1728,6 @@ function sortProducts() {
   const method = document.getElementById("sortingMethod").value; // Ambil metode sorting yang dipilih
   const startTime = performance.now(); // Mulai pengukuran waktu
 
-  // Panggil metode sorting yang sesuai
   if (method === "iterative") {
     bubbleSortIterative(filteredProducts); // Sorting iteratif berdasarkan kategori
   } else if (method === "recursive") {
@@ -1735,7 +1741,7 @@ function sortProducts() {
   displayTime(timeTaken); // Tampilkan waktu eksekusi
 }
 
-// Algoritma Bubble Sort Iteratif
+// Algoritma Bubble Sort ITERATIF
 function bubbleSortIterative(array) {
   let n = array.length;
   for (let i = 0; i < n - 1; i++) {
@@ -1749,22 +1755,19 @@ function bubbleSortIterative(array) {
   }
 }
 
-// Algoritma Bubble Sort Rekursif
-function bubbleSortRecursive(array, n = array.length) {
-  if (n === 1) return; // Basis rekursi: jika panjang array sudah 1, selesai
-
-  for (let i = 0; i < n - 1; i++) {
-    if (
-      array[i].name > array[i + 1].name // Sorting berdasarkan nama produk
-    ) {
-      [array[i], array[i + 1]] = [array[i + 1], array[i]]; // Tukar posisi jika urutannya salah
-    }
+// Algoritma Bubble Sort REKURSIF
+function bubbleSortRecursive(array, n = array.length, i = 0) {
+  if (n === 1) return;
+  if (i >= n - 1) {
+    return bubbleSortRecursive(array, n - 1);
   }
-
-  bubbleSortRecursive(array, n - 1); // Panggil rekursif untuk sisa array
+  if (array[i].name > array[i + 1].name) {
+    [array[i], array[i + 1]] = [array[i + 1], array[i]];
+  }
+  return bubbleSortRecursive(array, n, i + 1);
 }
 
-// Fungsi untuk menampilkan running timeny
+// Fungsi untuk menampilkan RUNNING TIME
 function displayTime(timeTaken) {
   const timeDisplay = document.getElementById("timeDisplay");
   timeDisplay.textContent = `Waktu eksekusi: ${timeTaken} milidetik`;
